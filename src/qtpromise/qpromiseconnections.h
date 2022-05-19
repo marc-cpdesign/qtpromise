@@ -18,7 +18,7 @@ class QPromiseConnections
 public:
     QPromiseConnections() : m_d(std::make_shared<Data>()) { }
 
-    int count() const { return m_d->connections.count(); }
+    int count() const { return static_cast<int>(m_d->connections.count()); }
 
     void disconnect() const { m_d->disconnect(); }
 
